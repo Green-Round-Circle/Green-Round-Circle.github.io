@@ -1,11 +1,328 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>George — Portofolio</title>
+
+<style>
+/* ===== THEMES ===== */
+:root {
+    --bg: #202124;
+    --panel: #181a1b;
+    --accent: #7fd1b9;
+    --text-main: #e6e6e6;
+    --text-muted: #a0a0a0;
+    --border: #2f3336;
+}
+
+/* Classic terminal theme */
+body.terminal-theme {
+    --bg: #0e0e0e;
+    --panel: #0a0a0a;
+    --accent: #00ff88;
+    --text-main: #e0e0e0;
+    --text-muted: #9a9a9a;
+    --border: #1f1f1f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
+    background: var(--bg);
+    color: var(--text-main);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ===== HEADER ===== */
+header {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--accent);
+}
+
+header p {
+    margin: 0.2rem 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.4rem 0.7rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.theme-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* ===== MAIN ===== */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+section h2 {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+/* ===== TERMINAL CARDS ===== */
+.terminal {
+    border: 1px solid var(--border);
+    background: var(--panel);
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+}
+
+.terminal-header {
+    background: rgba(255,255,255,0.03);
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+}
+
+.terminal-body {
+    padding: 0.9rem 1rem;
+}
+
+.prompt {
+    color: var(--accent);
+}
+
+.text {
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+}
+
+.terminal a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.terminal a:hover {
+    text-decoration: underline;
+}
+
+/* ===== ABOUT TEXT ===== */
+.about-text {
+    max-width: 750px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* ===== CTF TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+thead {
+    color: var(--text-muted);
+}
+
+th {
+    font-weight: normal;
+    text-align: left;
+    padding-bottom: 0.4rem;
+}
+
+td {
+    padding: 0.2rem 0;
+}
+
+.placement {
+    padding-right: 1.2rem;   /* extra breathing room */
+    white-space: nowrap;     /* prevents ugly wrapping */
+}
+
+.year {
+    width: 70px;
+    color: var(--text-muted);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    padding: 2rem 1.5rem 3rem;
+}
+
+.social-links a {
+    margin-right: 1.2rem;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-<br>
-<p>My first paragraph.</p>
+<header>
+    <div>
+        <h1>George // Portfolio</h1>
+        <p>Learning · CTFs · Building things</p>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()">Hacker vibes</button>
+</header>
+
+<main>
+
+<section>
+    <h2>About</h2>
+    <p class="about-text">
+        I enjoy learning about cybersecurity through practical projects and Capture the Flag competitions. 
+		I like learning about systems, experimenting with code, and figuring out why things break.
+    </p>
+</section>
+
+<section>
+    <h2>Projects</h2>
+
+    <div class="terminal">
+        <div class="terminal-header">project_01.sh</div>
+        <div class="terminal-body">
+            <div class="prompt">$ <a href="https://github.com/" target="_blank">
+                MetadataScrambler
+            </a></div>
+            <div class="text">
+                Tool for extracting and analyzing metadata from files, scramble metadata randomly or manually edit it.
+				(Work in progess)
+            </div>
+        </div>
+    </div>
+
+    <div class="terminal">
+        <div class="terminal-header">project_02.sh</div>
+        <div class="terminal-body">
+            <div class="prompt">$ <a href="https://github.com/" target="_blank">
+                Work in progress
+            </a></div>
+            <div class="text">
+                TODO
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>CTF Experience</h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="placement">Placement</th>
+                <th>Competition</th>
+                <th class="year">Year</th>
+            </tr>
+        </thead>
+        <tbody>
+			<tr>
+                <td class="placement">Participant</td>
+                <td>Cybersecurity Grand Prix Nationals by Bitdefender</td>
+                <td class="year">2025</td>
+            </tr>
+			<tr>
+                <td class="placement">119/612</td>
+                <td>Null CTF</td>
+                <td class="year">2025</td>
+            </tr>
+			<tr>
+                <td class="placement">3rd</td>
+                <td>YouniHack CTF</td>
+                <td class="year">2025</td>
+            </tr>
+            <tr>
+                <td class="placement">Mențiune</td>
+                <td>Olimpiada Națională de Securitate Cibernetică etapa națională</td>
+                <td class="year">2025</td>
+            </tr>
+			<tr>
+                <td class="placement">2nd</td>
+                <td>Olimpiada Națională de Securitate Cibernetică etapa județeană</td>
+                <td class="year">2025</td>
+            </tr>
+			<tr>
+                <td class="placement">85/288</td>
+                <td>UniVsThreats CTF</td>
+                <td class="year">2025</td>
+            </tr>
+			<tr>
+                <td class="placement">37/211</td>
+                <td>UNbreakable Romania teams</td>
+                <td class="year">2025</td>
+            </tr>
+			<tr>
+                <td class="placement">86/486</td>
+                <td>UNbreakable Romania individual</td>
+                <td class="year">2025</td>
+            </tr>
+			<tr>
+                <td class="placement">143/453</td>
+                <td>DefCamp Capture the Flag Online Quals</td>
+                <td class="year">2024</td>
+            </tr>
+			<tr>
+                <td class="placement">47/117</td>
+                <td>UNbreakable Romania teams</td>
+                <td class="year">2024</td>
+            </tr>
+            <tr>
+                <td class="placement">134/843</td>
+                <td>UNbreakable Romania individual</td>
+                <td class="year">2024</td>
+            </tr>
+            <tr>
+                <td class="placement">Participant</td>
+                <td>ACS IXIA CTF</td>
+                <td class="year">2024</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+</main>
+
+<footer>
+    <div class="social-links">
+        <a href="https://github.com/Green-Round-Circle" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/george-ilban-suciu-2a62b6387" target="_blank">LinkedIn</a>
+        <a href="mailto:emanuelilban123@gmail.com">Email</a>
+		<a href="https://tryhackme.com/p/greencircle">TryHackMe</a>
+    </div>
+</footer>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("terminal-theme");
+}
+</script>
 
 </body>
-</html> 
+</html>
+
