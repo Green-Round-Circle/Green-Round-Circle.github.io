@@ -127,6 +127,21 @@ section h2 {
     text-decoration: underline;
 }
 
+/* ===== WRITEUP TAGS ===== */
+.tags {
+    margin-top: 0.6rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 0.75rem;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.15rem 0.45rem;
+}
+
 /* ===== ABOUT TEXT ===== */
 .about-text {
     max-width: 750px;
@@ -156,8 +171,8 @@ td {
 }
 
 .placement {
-    padding-right: 1.2rem;   /* extra breathing room */
-    white-space: nowrap;     /* prevents ugly wrapping */
+    padding-right: 1.2rem;
+    white-space: nowrap;
 }
 
 .year {
@@ -228,6 +243,29 @@ footer {
             </div>
         </div>
     </div>
+</section>
+
+<section>
+    <h2>Writeups</h2>
+    <div class="terminal">
+        <div class="terminal-header">writeup_01.pdf</div>
+        <div class="terminal-body">
+            <div class="prompt">$ <a href="https://drive.google.com/file/d/1HA1UdZO1PyYAhfJkFFVNWHSEEqtija6e/view?usp=sharing" target="_blank">
+                #1 UniVsThreats26 Quals 2026
+            </a></div>
+            <div class="text">
+                 My first public CTF writeup, documenting my experience at UniVsThreats26 Quals 2026 alongside my devoted team, C.D-Pereti.
+            </div>
+            <div class="tags">
+                <span class="tag">web</span>
+				<span class="tag">forensics</span>
+				<span class="tag">reverse</span>
+				<span class="tag">OSINT</span>
+                <span class="tag">UniVsThreats26 Quals</span>
+                <span class="tag">2026</span>
+            </div>
+        </div>
+	</div>
 </section>
 
 <section>
@@ -320,7 +358,7 @@ footer {
                 <td class="placement">2nd</td>
                 <td>Olimpiada Națională de Securitate Cibernetică etapa județeană</td>
                 <td class="year">2025</td>
-            </tr>
+			</tr>
 			<tr>
                 <td class="placement">85/288</td>
                 <td>UniVsThreats CTF</td>
@@ -384,4 +422,3 @@ function toggleTheme() {
 
 </body>
 </html>
-
